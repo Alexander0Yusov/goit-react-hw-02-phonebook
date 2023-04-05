@@ -1,0 +1,17 @@
+.container {
+  border: 1px solid tomato;
+  width: 340px;
+}
+
+.title {
+  margin: 12px 0;
+}
+
+.contactList {
+  /* list-style: none; */
+  margin: 0;
+}
+
+.listItem {
+  font-size: 20px;
+}
