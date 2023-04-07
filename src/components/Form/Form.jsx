@@ -14,8 +14,7 @@ export class Form extends Component {
     const { name, number } = this.state;
     const modelId = nanoid();
     addUser({ id: modelId, name: name, number: number });
-
-    //  console.log(this.state);
+    this.setState({ name: '', number: '' });
   };
 
   handlerChangeName = e => {
@@ -31,7 +30,6 @@ export class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handlerSubmit} className={css.form}>
-        <h4 className={css.formTitle}>Phonebook</h4>
         <label className={css.formLabel}>
           <p className={css.formParagraph}>Name:</p>
           <input

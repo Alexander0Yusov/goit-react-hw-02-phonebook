@@ -3,10 +3,7 @@
   flex-direction: column;
   border: 1px solid tomato;
   width: 340px;
-}
-
-.formTitle {
-  margin: 12px 0;
+  padding-bottom: 8px;
 }
 
 .formLabel {

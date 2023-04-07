@@ -1,0 +1,11 @@
+.label {
+  width: 340px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border: 1px solid tomato;
+}
+
+.paragraph {
+  margin: 4px 0;
+}
