@@ -1,5 +1,7 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
+import { ListItem } from 'components/ListItem/ListItem';
 
 export class Contacts extends Component {
   render() {
@@ -9,19 +11,27 @@ export class Contacts extends Component {
       <div className={css.container}>
         <ul className={css.contactList}>
           {contactList.map(({ id, name, number }) => (
-            <li key={id} className={css.listItem}>
-              {name}: {number}
-              <button
-                onClick={() => deleteContact(id)}
-                className={css.button}
-                type="button"
-              >
-                Delete
-              </button>
-            </li>
+            <ListItem
+              key={id}
+              id={id}
+              name={name}
+              number={number}
+              deleteContact={deleteContact}
+            />
           ))}
         </ul>
       </div>
     );
   }
 }
+
+Contacts.propTypes = {
+  contactList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+  deleteContact: PropTypes.func,
+};

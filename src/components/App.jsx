@@ -67,13 +67,10 @@ export class App extends Component {
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          // justifyContent: 'center',
           alignItems: 'center',
           fontSize: 40,
           color: '#010101',
-          outlineWidth: 1,
-          outlineColor: 'tomato',
-          outlineStyle: 'solid',
         }}
       >
         <h1 className={css.title}>Phonebook</h1>

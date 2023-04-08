@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import css from './Form.module.css';
+import PropTypes from 'prop-types';
 
 export class Form extends Component {
   state = {
@@ -60,3 +61,7 @@ export class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  addUser: PropTypes.func,
+};
