@@ -32,6 +32,6 @@ Contacts.propTypes = {
       name: PropTypes.string,
       number: PropTypes.string,
     })
-  ),
-  deleteContact: PropTypes.func,
+  ).isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };

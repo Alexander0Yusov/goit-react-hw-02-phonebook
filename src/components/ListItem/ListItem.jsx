@@ -6,7 +6,7 @@ export class ListItem extends Component {
   render() {
     const { id, name, number, deleteContact } = this.props;
     return (
-      <li key={id} className={css.listItem}>
+      <li className={css.listItem}>
         {name}: {number}
         <button
           onClick={() => deleteContact(id)}
@@ -21,8 +21,8 @@ export class ListItem extends Component {
 }
 
 ListItem.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  number: PropTypes.string,
-  deleteContact: PropTypes.func,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };

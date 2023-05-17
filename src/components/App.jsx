@@ -23,22 +23,18 @@ export class App extends Component {
 
     if (decisionForAdd) {
       alert(`${decisionForAdd.name} is already in contacts !`);
-    } else {
-      this.setState(prev => {
-        return { contacts: [...prev.contacts, newItem] };
-      });
+      return;
     }
+
+    this.setState(prev => {
+      return { contacts: [...prev.contacts, newItem] };
+    });
   };
 
-  filterByName = (name, array) => {
-    const lowName = name.toLowerCase();
-
-    const filteredArray = array.filter(item => {
-      const lowItem = item.name.toLowerCase();
-      return lowItem.includes(lowName);
-    });
-
-    return filteredArray;
+  filterByName = () => {
+    const { filter, contacts } = this.state;
+    const lowName = filter.toLowerCase();
+    return contacts.filter(item => item.name.toLowerCase().includes(lowName));
   };
 
   isIncludingName = (name, array) => {
@@ -76,13 +72,12 @@ export class App extends Component {
         <h1 className={css.title}>Phonebook</h1>
         <Form addUser={this.addUser}></Form>
         <h2 className={css.title}>Contacts</h2>
-        <Filter filter={this.inputHandler} />
+        <Filter
+          inputHandler={this.inputHandler}
+          inputValue={this.state.filter}
+        />
         <Contacts
-          contactList={
-            this.state.filter === ''
-              ? this.state.contacts
-              : this.filterByName(this.state.filter, this.state.contacts)
-          }
+          contactList={this.filterByName()}
           deleteContact={this.deleteHandler}
         />
       </div>
